@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from 'react-router-dom';
 import { fetchDogs } from '../api';
+import { resolveImg } from "../images";
 
 
 function ShowDog(){
@@ -28,8 +29,9 @@ function ShowDog(){
 
     return(
         <article className="details">
-            <img  src={dog.img || '/placeholder-dog.png'}
-                    onError={(e) => { e.currentTarget.src = '/placeholder-dog.png'; }}
+            
+            <img  src={resolveImg(dog.img)}
+                     onError={(e) => { e.currentTarget.src = `${import.meta.env.BASE_URL}placeholder-dog.png`; }}
                     alt={dog.name} />
               <div>
         <h2>{dog.name}</h2>

@@ -1,6 +1,7 @@
 import  { useEffect, useMemo, useState } from 'react';
 import { fetchDogs } from "../api";
 import { Link } from 'react-router-dom';
+import { resolveImg } from '../images';
 
 function FindDog(){
     const [q, setQ] = useState('');
@@ -41,7 +42,7 @@ function FindDog(){
             <ul className='grid'>
                 {filtered.map(dog => (
                     <li key={dog.chipNumber} className='card'>
-                        <img  src={dog.img || '/placeholder-dog.png'}
+                        <img  src={resolveImg(dog.img)}
                           onError={(e) => { e.currentTarget.src = '/placeholder-dog.png'; }}
                                alt={dog.name} />
                         <div className="card-body">
