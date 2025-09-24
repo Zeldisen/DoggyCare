@@ -22,7 +22,7 @@ function FindDog(){
         const list = Array.isArray(dogs) ? dogs : [];
         if(!v) return list;
         return list.filter(d => 
-        [d.name, d.breed, d.owner?.name, d.owner?.lastName, d.chipNumber]
+        [d.name, d.breed, d.owner?.name, d.owner?.lastName, d.age, d.sex, d.chipNumber]
         .filter(Boolean)
         .some(x => String(x).toLocaleLowerCase('sv').includes(v))
         );
