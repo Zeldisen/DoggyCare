@@ -1,6 +1,7 @@
 
 import { Link, Outlet } from 'react-router-dom';
 import './App.css'
+import doggy from './components/images/Doggy-day-care.png';
 
 function App() {
 
@@ -8,10 +9,10 @@ function App() {
     <>
         <div className="layout">
       <header className="header">
-        <h1>Doggy DayCare</h1>
+        <img src={doggy} alt="doggy care" style={{width: "100%", maxWidth:"600%"}} />
         <nav className="nav">
-          <Link to="/">Välkommen</Link>
-          <Link to="/dogs">Katalog</Link>
+          {/* <Link to="/">Välkommen</Link>
+          <Link to="/dogs">Katalog</Link> */}
         </nav>
       </header>
       <main className="content">

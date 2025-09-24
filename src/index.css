@@ -54,6 +54,29 @@ h1 {
 .h3{
   color: black;
 }
+.welcome{
+  display: grid;
+
+  place-items: center;
+  gap: 1rem;
+  
+  
+
+}
+.btn-w{
+  display:inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 2rem;
+  background-color: rgb(49, 174, 49);
+  color: black;
+  font-weight: 500;
+  border-radius: 15px;
+  border: 2.5px solid rgb(46, 25, 163);
+  text-decoration: none;
+ 
+}
 
 
 
