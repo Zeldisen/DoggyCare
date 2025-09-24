@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from 'react-router-dom';
 import { fetchDogs } from '../api';
 import { resolveImg } from "../images";
+import "../showdog.css";
 
 
 function ShowDog(){
@@ -41,7 +42,7 @@ function ShowDog(){
         <p><strong>Chip:</strong> {dog.chipNumber}</p>
         <p><strong>Ägare:</strong> {dog.owner?.name} {dog.owner?.lastName} ({dog.owner?.phoneNumber})</p>
         <p><strong>Närvarande idag:</strong> {dog.present ? 'Ja' : 'Nej'}</p>
-        <p><Link to="/dogs">⬅ Tillbaka till katalogen</Link></p>
+        <Link to="/dogs" className="linkbtn" style={{ color: 'green'}}>⬅ Tillbaka till katalogen</Link>
       </div>
         </article>
     )

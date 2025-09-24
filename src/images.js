@@ -1,10 +1,8 @@
 export function resolveImg(url) {
-  const base = import.meta.env.BASE_URL; // '/DoggyCare/' på Pages, '/' lokalt
+   const base = import.meta.env.BASE_URL; // '/DoggyCare/' på Pages, '/' lokalt
   if (!url) return `${base}placeholder-dog.png`;
-
-  if (url.startsWith('http://')) return url.replace('http://', 'https://'); // mixed-content-fix
-  if (url.startsWith('https://')) return url; // redan full URL
-
-  // Annars: tolka som filnamn i public/images
-  return `${base}images/${url}`;
+  if (url.startsWith('http://')) return url.replace('http://', 'https://');
+  if (url.startsWith('https://')) return url;
+  // Om det *inte* är en full URL, använd placeholder (ingen lokal fil krävs)
+  return `${base}placeholder-dog.png`;
 }

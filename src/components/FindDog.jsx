@@ -2,6 +2,8 @@ import  { useEffect, useMemo, useState } from 'react';
 import { fetchDogs } from "../api";
 import { Link } from 'react-router-dom';
 import { resolveImg } from '../images';
+import  dogMembers  from './images/doggy-members.png'
+import '../finddog.css';
 
 function FindDog(){
     const [q, setQ] = useState('');
@@ -31,7 +33,8 @@ function FindDog(){
 
     return(
        <section>
-        <h2>Hund Katalogen</h2>
+        <img src={dogMembers} alt="members" />
+        {/* <h2>Hund Katalogen</h2> */}
         <form role="search" onSubmit={(e) => e.preventDefault()}>
             <input type="search"
             placeholder='Sök namn, ras, ägare...'
@@ -48,7 +51,7 @@ function FindDog(){
                         <div className="card-body">
                             <h3>{dog.name}</h3>
                             <p>{dog.breed} • {dog.age} år</p>
-                           <Link to={`/dogs/${encodeURIComponent(dog.chipNumber)}`}>Visa detaljer</Link>
+                           <Link to={`/dogs/${encodeURIComponent(dog.chipNumber)}`} className="linkbtn">Visa detaljer...</Link>
 
                         </div>
                     </li>

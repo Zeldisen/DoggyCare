@@ -13,14 +13,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
 
 body {
   margin: 0;
@@ -35,24 +27,7 @@ h1 {
   line-height: 1.1;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -60,7 +35,7 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: green;
   }
   button {
     background-color: #f9f9f9;
@@ -73,40 +48,17 @@ button:focus-visible {
   display: flex;
   flex-direction: row;
   justify-content: center;
-margin-top: 1px;  
+   margin-top: 1px;  
 }
-#one{
- color: rgb(128, 186, 41);
- margin-right: 10px;
- margin-left: 10px;
-}
-#two{
-  color: rgb(37, 175, 37);
-  margin-right: 10px;
-}
-#three{
-  color: rgb(128, 186, 41);
-  margin-right: 10px;
-}
+
 .h3{
   color: black;
 }
-body { margin:0; font-family: system-ui, sans-serif; color: #111; }
-.layout { min-height: 100dvh; display:grid; grid-template-rows:auto 1fr; }
-.header { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1rem; border-bottom:1px solid #e5e5e5; }
-.nav a { margin-left:.75rem; text-decoration:none; color:inherit; }
-.content { max-width: 1000px; margin: 0 auto; padding: 1rem; }
 
-form[role="search"] input { width:100%; max-width:420px; padding:.6rem .8rem; font-size:1rem; }
 
-.grid { list-style:none; padding:0; margin:1rem 0; display:grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap:1rem; }
-.card { border:1px solid #e5e5e5; border-radius:12px; overflow:hidden; background:#fff; }
-.card img { width:100%; height:160px; object-fit:cover; display:block; }
-.card-body { padding:.75rem .9rem; }
 
-.details { display:grid; grid-template-columns: 280px 1fr; gap:1rem; align-items:start; }
-.details img { width:100%; height:auto; border-radius:12px; }
-@media (max-width:700px){ .details{ grid-template-columns:1fr; } }
+
+
 
 
 
