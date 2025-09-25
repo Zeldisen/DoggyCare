@@ -1,23 +1,31 @@
 
 import './index.css'
 import App from './App.jsx'
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import React, { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { createHashRouter, RouterProvider, Navigate } from 'react-router-dom';
 import Welcome from './components/Welcome.jsx';
 import FindDog from './components/FindDog.jsx';
 import ShowDog from './components/ShowDog.jsx';
+import PresentsDog from './components/PresentsDog.jsx';
+
+const router = createHashRouter([
+  {
+    element: <App />, 
+    children: [
+      { path: '/', element: <Navigate to="/welcome" replace /> },
+      { path: '/welcome', element: <Welcome /> },
+      { path: '/findDog', element: <FindDog /> },
+      { path: '/dogs/:chipNumber', element: <ShowDog /> },        
+      { path: '/presentsDog', element: <PresentsDog /> },
+      { path: '*', element: <Navigate to="/welcome" replace /> },
+    ],
+  },
+])
 
 
-
-
-ReactDOM.createRoot(document.getElementById('root')).render(
- <HashRouter>
- <Routes>
-  <Route element={<App />}/>
-  <Route path="/" element={<Welcome/>} />
-  <Route path="/dogs" element={<FindDog/>} />
-  <Route path="/dogs/:chipNumber" element={<ShowDog/>} />
- </Routes>
- </HashRouter>
+createRoot(document.getElementById('root')).render(
+    <StrictMode>
+        <RouterProvider router= {router} />
+    </StrictMode>
 );
