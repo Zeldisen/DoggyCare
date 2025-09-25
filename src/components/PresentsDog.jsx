@@ -10,14 +10,14 @@ function PresentsDog(){
     const [error, setError ] = useState(null);
 
     useEffect(() => {
-        fetchDogs({ present: true})
+        fetchDogs({ present: true, include: ['img'] })
         .then(setAllDogs)
         .catch(setError)
         .finally(() => setloading(false));
     },[]);
 
-    if (loading) return <p>Laddar...</p>;
-    if(error) return <p>Fel: {error.message}</p>
+    if (loading) return <p>Loading...</p>;
+    if(error) return <p>Fail: {error.message}</p>
 
       const presentDogs = allDogs.filter(d =>
     d.present === true || d.isPresent === true || d.status === "present"
@@ -30,7 +30,7 @@ function PresentsDog(){
             <ul className="grid">
                 {presentDogs.map(d => (
                     <li className="card" key={d.id}>
-                      <img src={resolveImg(d.img)} alt={d.name} />
+                      <img src={d.img} alt={d.name} />
                       <div className="card-body">
                         <p>{d.name}</p>
 
@@ -40,9 +40,9 @@ function PresentsDog(){
                
 
             </ul>
-             {presentDogs.length === 0 && <p>Just nu är inga hundar incheckade.</p>}
+             {presentDogs.length === 0 && <p>No dogs are here today.</p>}
         </section>
-        <Link to="welcome" style={{ color: 'green'}}>Tillbaka</Link>
+        <Link to="welcome" style={{ color: 'green'}}>Go Back</Link>
         </>
     )
 }

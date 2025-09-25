@@ -24,25 +24,25 @@ function ShowDog(){
         .catch(() => setState('error'));
     }, [chipNumber]);
 
-    if(state === 'loading') return <p>Laddar...</p>;
-    if(state === 'error') return <p>Något gick fel</p>;
-    if(!dog) return (<p>Hunden hittade inte. <Link to="/dogs" >Tillbaka</Link></p>);
+    if(state === 'loading') return <p>Loading...</p>;
+    if(state === 'error') return <p>Somthing went wrong!</p>;
+    if(!dog) return (<p>Doggy not found. <Link to="/dogs" >Back</Link></p>);
 
     return(
         <article className="details">
             
-            <img  src={resolveImg(dog.img)}
+            <img  src={dog.img}
                      onError={(e) => { e.currentTarget.src = `${import.meta.env.BASE_URL}placeholder-dog.png`; }}
                     alt={dog.name} />
               <div>
         <h2>{dog.name}</h2>
-        <p><strong>Ras:</strong> {dog.breed}</p>
-        <p><strong>Kön:</strong> {dog.sex}</p>
-        <p><strong>Ålder:</strong> {dog.age}</p>
+        <p><strong>Breed:</strong> {dog.breed}</p>
+        <p><strong>Gender:</strong> {dog.sex}</p>
+        <p><strong>Age:</strong> {dog.age}</p>
         <p><strong>Chip:</strong> {dog.chipNumber}</p>
-        <p><strong>Ägare:</strong> {dog.owner?.name} {dog.owner?.lastName} ({dog.owner?.phoneNumber})</p>
-        <p><strong>Närvarande idag:</strong> {dog.present ? 'Ja' : 'Nej'}</p>
-        <Link to="/dogs" className="linkbtn" style={{ color: 'green'}}>⬅ Tillbaka till katalogen</Link>
+        <p><strong>Owner:</strong> {dog.owner?.name} {dog.owner?.lastName} ({dog.owner?.phoneNumber})</p>
+        <p><strong>Presents today:</strong> {dog.present ? 'Yes' : 'No'}</p>
+        <Link to="/dogs" className="linkbtn" style={{ color: 'green'}}>⬅ Go Back</Link>
       </div>
         </article>
     )
