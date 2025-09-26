@@ -10,10 +10,7 @@ function App() {
         <div className="layout">
       <header className="header">
         <img src={doggy} alt="doggy care" style={{width: "100%", maxWidth:"600%"}} />
-        <nav className="nav">
-          {/* <Link to="/">Välkommen</Link>
-          <Link to="/dogs">Katalog</Link> */}
-        </nav>
+       
       </header>
       <main className="content">
         <Outlet />

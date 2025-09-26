@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import leftPaw from './images/paw-left.jpg';
-import rightPaw from './images/paw-right.jpg';
+import rightPaw from './images/paw.png';
 import welcome from './images/Welcome.png';
+import './css/welcome.css';
 
 function Welcome(){
     return(
@@ -12,7 +12,7 @@ function Welcome(){
       <img src={rightPaw} alt="Höger tass" style={{width: "10%", height: "20%", maxWidth: "600%"}}/>
     </header>
     <section className="welcome">
-        <p>Sök bland våra hundar och klicka för att se detaljer.</p>
+        <p className="search-text">Search among our Doggy members and click for more details.</p>
         <Link className="btn-w" to="/findDog" >All Members</Link>
         <Link className="btn-w" to="/presentsDog">Today´s Pack</Link>
     </section>

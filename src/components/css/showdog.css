@@ -1,0 +1,46 @@
+@scope (.show-dogs){
+
+
+.details { 
+    display:grid; 
+    grid-template-columns: 1fr; 
+    gap:1rem; 
+    align-items:center; 
+    color: #1c0c68;
+}
+.details img { 
+    width:100%; 
+    height:auto; 
+    border:5px solid #11097a;
+    border-radius:12px;
+    box-shadow: 0 0 0 3px #f1e8f3;
+ }
+
+.back-btn{
+  color: #09035a;
+  text-decoration: none;
+}
+.back-btn:hover {
+  color: rgb(116, 44, 134);
+}
+.name{
+    font-style: italic;
+    color:#1c0c68;
+}
+.about{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1rem;
+    gap:1rem;
+   
+}
+.about img{
+    padding-top: 20px;
+    width: 30px;
+    height: 30px;
+}
+
+}
+
+

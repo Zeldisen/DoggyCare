@@ -1,0 +1,32 @@
+.welcome{
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+}
+.btn-w{
+  display:inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 2rem;
+  background-color: #A020F0;
+  color: rgb(225, 167, 248);
+  font-style: italic;
+  font-weight: 500;
+  border-radius: 15px;
+  border: 2px solid #100b90;
+     box-shadow: 0 0 0 3px #f1e8f3;
+  text-decoration: none;
+ 
+}
+.btn-w:hover{
+  background-color: rgb(225, 167, 248);
+  color: #100b90;
+}
+.search-text{
+  font-style: italic;
+  font-size: 25px;
+  font-weight: 500;
+  color:#1c0c68;
+
+}
