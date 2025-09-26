@@ -2,8 +2,8 @@ import  { useEffect, useMemo, useState } from 'react';
 import { fetchDogs } from "../api";
 import { Link } from 'react-router-dom';
 import { resolveImg } from '../images';
-import  dogMembers  from './images/doggy-members.png'
-import '../finddog.css';
+import  dogMembers  from './images/doggy-Members.png'
+import './css/finddog.css';
 
 function FindDog(){
     const [question, setQuestion] = useState('');
@@ -79,9 +79,9 @@ const filtered = useMemo(() => {
     if(state === 'error') return <p>Faild to fetch data.</p>
 
     return(
-       <section>
-        <img src={dogMembers} alt="members" />
-         <h4>Search for name, breed, owner, age or gender down below.</h4>
+       <section className="find-dogs"> 
+        <img src={dogMembers} alt="members" style={{width: "50%"}} />
+         <h4 className="text">Search for name, breed, owner, age or gender down below.</h4>
         <form role="search" onSubmit={(e) => e.preventDefault()}>
             <input type="search"
             placeholder='Search...'
@@ -98,7 +98,7 @@ const filtered = useMemo(() => {
                         <div className="card-body">
                             <h3>{dog.name}</h3>
                             <p>{dog.breed} • {dog.age} år</p>
-                           <Link to={`/dogs/${encodeURIComponent(dog.chipNumber)}`} className="linkbtn">Show details...</Link>
+                           <Link to={`/dogs/${encodeURIComponent(dog.chipNumber)}`} className="show-dog-btn">Show details...</Link>
 
                         </div>
                     </li>

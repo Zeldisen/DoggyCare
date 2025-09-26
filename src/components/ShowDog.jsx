@@ -2,8 +2,10 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from 'react-router-dom';
 import { fetchDogs } from '../api';
-import { resolveImg } from "../images";
-import "../showdog.css";
+import about from './images/details-about.png';
+import paw from './images/paw.png';
+
+import "./css/showdog.css";
 
 
 function ShowDog(){
@@ -29,22 +31,33 @@ function ShowDog(){
     if(!dog) return (<p>Doggy not found. <Link to="/dogs" >Back</Link></p>);
 
     return(
-        <article className="details">
+        <section className="show-dogs">
+            <img src={about} alt="details-about"style={{width:"50%"}} />
+            <section className="about">
+                <img src={paw} alt="paw" />
+                 <h2 className="name">{dog.name}</h2>
+                 <img src={paw} alt="paw" />
             
+            </section>
+           
+        <article className="details">
+
             <img  src={dog.img}
                      onError={(e) => { e.currentTarget.src = `${import.meta.env.BASE_URL}placeholder-dog.png`; }}
                     alt={dog.name} />
+                    
               <div>
-        <h2>{dog.name}</h2>
+        
         <p><strong>Breed:</strong> {dog.breed}</p>
         <p><strong>Gender:</strong> {dog.sex}</p>
         <p><strong>Age:</strong> {dog.age}</p>
         <p><strong>Chip:</strong> {dog.chipNumber}</p>
         <p><strong>Owner:</strong> {dog.owner?.name} {dog.owner?.lastName} ({dog.owner?.phoneNumber})</p>
         <p><strong>Presents today:</strong> {dog.present ? 'Yes' : 'No'}</p>
-        <Link to="/dogs" className="linkbtn" style={{ color: 'green'}}>⬅ Go Back</Link>
+        <Link to="/dogs" className="back-btn" >⬅ Go Back</Link>
       </div>
         </article>
+        </section>
     )
 }
 export default ShowDog;

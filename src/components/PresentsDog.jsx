@@ -2,7 +2,8 @@ import todayPack from "./images/Today-s-Pack.png";
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import { fetchDogs } from "../api";         
-import { resolveImg } from "../images"; 
+import './css/presentsdog.css'
+
 function PresentsDog(){
 
     const [allDogs, setAllDogs] = useState([]);
@@ -26,15 +27,17 @@ function PresentsDog(){
     return (
         <>
         <img src={todayPack} alt="Dagens flock" style={{width: "50%"}}/>
-        <section className="content">
-            <ul className="grid">
+        <section className="presenets-dog">
+        <section className="content-p">
+            <ul className="grid-p">
                 {presentDogs.map(d => (
-                    <li className="card" key={d.id}>
-                      <img src={d.img} alt={d.name} />
-                      <div className="card-body">
+                    <li className="card-p" key={d.id}>
+                      <img src={d.img} alt={d.name} style={{width:"50%"}}/>
+                      <p className="name-text">{d.name}</p>
+                      {/* <div className="card-body">
                         <p>{d.name}</p>
 
-                      </div>
+                      </div> */}
                 </li>
                 ))}
                
@@ -42,8 +45,12 @@ function PresentsDog(){
             </ul>
              {presentDogs.length === 0 && <p>No dogs are here today.</p>}
         </section>
-        <Link to="welcome" style={{ color: 'green'}}>Go Back</Link>
+         <Link to="welcome" className="go-back-btn" >Go Back</Link>
+        </section>
+       
+        {/* färgtema #A020F0 */}
         </>
     )
 }
 export default PresentsDog;
+ 
