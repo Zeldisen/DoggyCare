@@ -1,8 +1,8 @@
 @scope (.presenets-dog) {
 
- 
-.card-p{
+.card-p  {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: .75rem .9rem;
@@ -26,9 +26,9 @@
    
     align-items:start; 
     max-width: 1000px;
-     margin: 0 auto; 
-     padding: 1rem; 
-    }
+    margin: 0 auto; 
+    padding: 1rem; 
+}
    
  .grid-p{ 
     list-style: none;
@@ -38,32 +38,40 @@
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 1rem;
     }
-    .name-text{
+ .name-text{
         font-style: italic;
         font-weight: 700;
         color: #1c0c68;
     }
    
-     .go-back-btn{
-         display: inline-flex;   
-         align-items: center;
-         justify-content: center;
-         width: 5rem;
-         text-decoration: none;
-         font-style: italic;
-         font-weight: 500;
-         color: rgb(225, 167, 248);
-         background-color:#A020F0;
-         border-radius: 15px;
-         border: 2px solid #100b90;
+ .go-back-btn{
+    display: inline-flex;   
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    text-decoration: none;
+    font-style: italic;
+    font-weight: 500;
+    color: rgb(225, 167, 248);
+    background-color:#A020F0;
+    border-radius: 15px;
+    border: 2px solid #100b90;
         
-     }
-     .go-back-btn:hover{
+}
+.go-back-btn:hover{
+     background-color:rgb(225, 167, 248) ;
+     color: #100b90;
         
-        background-color:rgb(225, 167, 248) ;
-        color: #100b90;
-        
-     }
+}
+ .card-link{
+  display: block;
+  padding: .75rem .9rem; /* större klickyta */
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+}
+.card-p:hover .card-link{ 
+  text-decoration: none; }
 
 }
 

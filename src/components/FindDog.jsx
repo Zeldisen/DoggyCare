@@ -1,7 +1,6 @@
 import  { useEffect, useMemo, useState } from 'react';
 import { fetchDogs } from "../api";
 import { Link } from 'react-router-dom';
-import { resolveImg } from '../images';
 import  dogMembers  from './images/doggy-Members.png'
 import './css/finddog.css';
 
@@ -80,7 +79,12 @@ const filtered = useMemo(() => {
 
     return(
        <section className="find-dogs"> 
-        <img src={dogMembers} alt="members" style={{width: "50%"}} />
+       <section className="heading">
+         <img src={dogMembers} alt="members" style={{width: "50%"}} />
+        <Link to="/dog" className="back-btn" >⬅ Go Back</Link>
+       </section>
+        
+        
          <h4 className="text">Search for name, breed, owner, age or gender down below.</h4>
         <form role="search" onSubmit={(e) => e.preventDefault()}>
             <input type="search"
@@ -88,6 +92,7 @@ const filtered = useMemo(() => {
             value={question}
             onChange={e => setQuestion(e.target.value)} />
             </form>
+            
 
             <ul className='grid'>
                 {filtered.map(dog => (

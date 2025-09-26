@@ -1,21 +1,17 @@
 @scope(.find-dogs){
-.content { 
-  max-width: 1000px;
-   margin: 0 auto; 
-   padding: 1rem; 
-  }
 
 form[role="search"] input {
  
-     width:100%;
-     max-width:420px; 
-     height: 3rem;
-     padding:.6rem .8rem; 
-     font-size:1rem;
-     background-color: #9b65ca;
-     color:rgb(246, 243, 243);
-     border-radius: 5px;
-     box-shadow: 0 0 0 3px snow;
+  width:100%;
+  max-width:420px; 
+  height: 3rem;
+  padding:.6rem .8rem ; 
+  font-size:1rem;
+  background-color: #9b65ca;
+  color:rgb(246, 243, 243);
+  border-radius: 5px;
+  box-shadow: 0 0 0 3px snow;
+  padding-bottom: 1rem;
   
  }
  form[role="search"] input::placeholder {
@@ -24,14 +20,14 @@ form[role="search"] input {
   opacity: 1;  
  }
                        
-
 .grid { 
-      list-style:none;
-      padding:0;
-      margin:1rem 0; 
-      display:grid; 
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap:1rem; }
+  list-style:none;
+  padding:0;
+  margin:1rem 0; 
+  display:grid; 
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap:1rem; }
+
 .card { 
   border:2px solid #100b90; 
   border-radius:12px; 
@@ -40,13 +36,13 @@ form[role="search"] input {
   box-shadow: 0 0 0 3px snow;
  }
 .card img {
-   width:100%; 
-   height:160px;
-   object-fit:cover; 
-   display:block;
-   border:1px;
-   border-radius: 10px;  
-  }
+  width:100%; 
+  height:160px;
+  object-fit:cover; 
+  display:block;
+  border:1px;
+  border-radius: 10px;  
+}
 
 .card { color: #1c0c68 }
 .card {
@@ -61,6 +57,16 @@ form[role="search"] input {
 }
 .text{
   color:  #1c0c68;
+}
+.back-btn{
+  color: #1c0c68;
+  text-decoration: none;
+  
+}
+.heading{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 }
 
