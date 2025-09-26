@@ -19,6 +19,8 @@
 .back-btn{
   color: #09035a;
   text-decoration: none;
+  font-weight: 400;
+  font-style: italic;
 }
 .back-btn:hover {
   color: rgb(116, 44, 134);
@@ -39,6 +41,15 @@
     padding-top: 20px;
     width: 30px;
     height: 30px;
+}
+.back-links{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.or{
+    font-weight: 700;
 }
 
 }

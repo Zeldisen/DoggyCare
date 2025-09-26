@@ -32,12 +32,13 @@ function PresentsDog(){
             <ul className="grid-p">
                 {presentDogs.map(d => (
                     <li className="card-p" key={d.id}>
-                      <img src={d.img} alt={d.name} style={{width:"50%"}}/>
+       <Link className="card-link"
+                  to={`/dogs/${encodeURIComponent(String(d.chipNumber))}`}
+                  aria-label={`Visa ${d.name}`}>
+                  
+                      <img src={d.img} alt={d.name} style={{width:"100%"}} />
                       <p className="name-text">{d.name}</p>
-                      {/* <div className="card-body">
-                        <p>{d.name}</p>
-
-                      </div> */}
+                     </Link>
                 </li>
                 ))}
                

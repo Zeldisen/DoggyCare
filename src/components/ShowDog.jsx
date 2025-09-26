@@ -37,24 +37,26 @@ function ShowDog(){
                 <img src={paw} alt="paw" />
                  <h2 className="name">{dog.name}</h2>
                  <img src={paw} alt="paw" />
-            
-            </section>
+        </section>
            
         <article className="details">
 
             <img  src={dog.img}
-                     onError={(e) => { e.currentTarget.src = `${import.meta.env.BASE_URL}placeholder-dog.png`; }}
-                    alt={dog.name} />
                     
-              <div>
-        
+                    alt={dog.name} />    
+      <div>
         <p><strong>Breed:</strong> {dog.breed}</p>
         <p><strong>Gender:</strong> {dog.sex}</p>
         <p><strong>Age:</strong> {dog.age}</p>
         <p><strong>Chip:</strong> {dog.chipNumber}</p>
         <p><strong>Owner:</strong> {dog.owner?.name} {dog.owner?.lastName} ({dog.owner?.phoneNumber})</p>
         <p><strong>Presents today:</strong> {dog.present ? 'Yes' : 'No'}</p>
-        <Link to="/dogs" className="back-btn" >⬅ Go Back</Link>
+        <section className="back-links">
+         <Link to="/findDog" className="back-btn" >⬅ Go Back</Link>
+         <p className="or">OR</p>
+        <Link to="/presentsDog" className="back-btn" >⬅ Back to Today´s Pack</Link>
+        </section>
+      
       </div>
         </article>
         </section>
